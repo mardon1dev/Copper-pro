@@ -1,0 +1,252 @@
+@import './mixins';
+@import '../font';
+.products{
+    margin-top: 80px;
+    &__title{
+        text-align: center;
+        font: {
+            family:$second-font;
+            weight: 400;
+            size: 50px;
+        }
+        line-height: 74.9%;
+        color: $second-color;
+        text-transform: uppercase;
+    }
+    &__wrapper{
+        width: 100%;
+    }
+    &__boxes{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+        margin-top: 46px;
+        &--box{
+            max-width: 444px;
+            height: 491px;
+            width: 100%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            position: relative;
+            @include bg-image;
+            & span{
+                position: absolute;
+                z-index: 3;
+                font: {
+                    family: $main-font;
+                    weight:600;
+                    size: 30px;
+                }
+                line-height: 96.8%;
+                color: $main-color;
+                margin-bottom: 27px;
+                text-align: center;
+            }
+            & .shadow{
+                z-index: 2;
+                position: absolute;
+                background: linear-gradient(360deg, rgba(7, 44, 38, 0.5) 0%, rgba(7, 44, 38, 0) 100%);
+                transform: rotate(360deg);
+                width: 100%;
+                bottom: 0;
+                height: 491px;
+                cursor: pointer;
+                &:hover{
+                    background: linear-gradient(351.3deg, rgba(203, 141, 98, 0) 33.24%, #CB8D62 104.72%);
+                    transform: rotate(180deg);
+                    height: 491px;
+                }
+            }
+            &:nth-child(1){
+                background: {
+                    image: url(../../images/product1.jpg);
+                }
+            }
+            &:nth-child(2){
+                background: {
+                    image: url(../../images/product2.jpg);
+                }
+            }
+            &:nth-child(3){
+                background: {
+                    image: url(../../images/product3.jpg);
+                }
+            }
+            &:nth-child(4){
+                background: {
+                    image: url(../../images/product4.jpg);
+                }
+            }
+            &:nth-child(5){
+                background: {
+                    image: url(../../images/product5.jpg);
+                }
+            }
+            &:nth-child(6){
+                background: {
+                    image: url(../../images/product6.jpg);
+                }
+                & .discount30{
+                    position: absolute;
+                    top: 48px;
+                    left: 48px;
+                    font: {
+                        weight: 900;
+                        size: 40px;
+                        family: $main-font;
+                    }
+                    line-height: 96.4%;
+                    color: $main-color;
+                }
+                & .discount50{
+                    position: absolute;
+                    top: 122px;
+                    right: 50px;
+                    font: {
+                        weight: 900;
+                        size: 70px;
+                        family: $main-font;
+                    }
+                    line-height: 96.4%;
+                    color: $main-color;
+                }
+                & .discount80{
+                    position: absolute;
+                    bottom: 50px;
+                    left: 50px;
+                    font: {
+                        weight: 900;
+                        size: 100px;
+                        family: $main-font;
+                    }
+                    line-height: 96.4%;
+                    color: $main-color;
+                }
+            }
+
+        }
+        
+    }
+}
+@media screen and (max-width:992px) {  
+    .container{
+        padding: 0 20px;
+    }
+    
+    .products__boxes--box:nth-child(6) .discount30 {
+        top: 40px;
+        left: 40px;
+        font-size: 40px;
+    }
+    .products__boxes--box:nth-child(6) .discount50 {
+        top: 120px;
+        right: 40px;
+        font-size: 50px;
+    }
+    .products__boxes--box:nth-child(6) .discount80 {
+        bottom: 100px;
+        left: 50px;
+        font-size: 60px;
+    }
+    .products__boxes--box {
+        max-width: 300px;
+        height: 400px;
+        width: 100%;
+        & .shadow{
+            height: 400px;
+            cursor: pointer;
+            &:hover{
+                height: 400px;
+            }
+        }
+        & span{
+            font: {
+                size: 25px;
+            }
+        }
+    }
+    
+}
+@media screen and (max-width:768px) {  
+    .products__title{
+        font-size: 40px;
+    }
+    .products__boxes--box:nth-child(6) .discount30 {
+        top: 30px;
+        left: 30px;
+        font-size: 30px;
+    }
+    .products__boxes--box:nth-child(6) .discount50 {
+        top: 90px;
+        right: 30px;
+        font-size: 30px;
+    }
+    .products__boxes--box:nth-child(6) .discount80 {
+        bottom: 50px;
+        left: 50px;
+        font-size: 30px;
+    }
+    .products__boxes--box {
+        max-width: 213px;
+        height: 235px;
+        width: 100%;
+        & .shadow{
+            height: 235px;
+            cursor: pointer;
+            &:hover{
+                height: 235px;
+            }
+        }
+        & span{
+            font: {
+                size: 20px;
+            }
+        }
+    }
+}
+@media screen and (max-width:576px){
+    .products{
+        margin-top: 40px;
+        &__title{
+            font-size: 24px;
+        }
+        &__boxes--box {
+            max-width: 234px;
+            height: 248px;
+            width: 100%;
+            & .shadow{
+                height: 148px;
+                cursor: pointer;
+                &:hover{
+                    height: 148px;
+                }
+            }
+            & span{
+                font: {
+                    size: 12px;
+                }
+            }
+        }
+    }
+    .products__boxes{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .products__boxes--box:nth-child(6) .discount30 {
+        top: 20px;
+        left: 20px;
+        font-size: 14px;
+    }
+    .products__boxes--box:nth-child(6) .discount50 {
+        top: 50px;
+        right: 10px;
+        font-size: 14px;
+    }
+    .products__boxes--box:nth-child(6) .discount80 {
+        bottom: 30px;
+        left: 30px;
+        font-size: 14px;
+    }
+    
+}

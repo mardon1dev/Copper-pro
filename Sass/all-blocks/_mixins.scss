@@ -1,0 +1,7 @@
+@mixin bg-image {
+    background: {
+        position: center;
+        repeat: no-repeat;
+        size: cover;
+    }
+}
